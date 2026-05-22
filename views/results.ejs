@@ -1,0 +1,109 @@
+<%- include("partials/header", { title }) %>
+<main>
+  <section class="results-hero">
+    <div class="page-shell result-heading">
+      <div>
+        <p class="eyebrow">Resultado guardado</p>
+        <h1><%= assessment.final_profile %></h1>
+        <p class="lead compact"><%= profile.interpretation %></p>
+      </div>
+      <dl class="result-meta">
+        <% if (assessment.candidate_name) { %>
+          <div>
+            <dt>Nombre</dt>
+            <dd><%= assessment.candidate_name %></dd>
+          </div>
+        <% } %>
+        <% if (assessment.candidate_role) { %>
+          <div>
+            <dt>Rol</dt>
+            <dd><%= assessment.candidate_role %></dd>
+          </div>
+        <% } %>
+        <div>
+          <dt>Principal</dt>
+          <dd><%= assessment.primary_profile %></dd>
+        </div>
+        <div>
+          <dt>Secundario</dt>
+          <dd><%= assessment.secondary_profile %></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="page-shell result-layout">
+      <section>
+        <div class="section-heading tight">
+          <p class="eyebrow">Scores</p>
+          <h2>Dimensiones normalizadas</h2>
+        </div>
+        <div class="score-stack">
+          <% Object.entries(dimensions).forEach(([key, dimension]) => { %>
+            <article class="score-row">
+              <div>
+                <strong><%= dimension.code %> - <%= dimension.name %></strong>
+                <span><%= scores[key].level %></span>
+              </div>
+              <div class="meter" aria-label="<%= dimension.name %>: <%= scores[key].score %> de 100">
+                <span style="width: <%= scores[key].score %>%"></span>
+              </div>
+              <b><%= scores[key].score %></b>
+            </article>
+          <% }) %>
+        </div>
+      </section>
+
+      <aside class="consistency-panel">
+        <p class="eyebrow">Consistencia</p>
+        <strong><%= consistency.score %>/100</strong>
+        <h2><%= consistency.label %></h2>
+        <p>
+          Compara respuestas espejo. Una consistencia baja invita a revisar el
+          contexto de respuesta antes de sacar conclusiones.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="content-band muted">
+    <div class="page-shell insight-grid">
+      <article>
+        <h2>Fortalezas</h2>
+        <ul>
+          <% profile.strengths.forEach((strength) => { %>
+            <li><%= strength %></li>
+          <% }) %>
+        </ul>
+      </article>
+      <article>
+        <h2>Riesgos potenciales</h2>
+        <ul>
+          <% profile.risks.forEach((risk) => { %>
+            <li><%= risk %></li>
+          <% }) %>
+        </ul>
+      </article>
+      <article>
+        <h2>Recomendaciones IT</h2>
+        <ul>
+          <% profile.recommendations.forEach((recommendation) => { %>
+            <li><%= recommendation %></li>
+          <% }) %>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="result-note">
+    <div class="page-shell">
+      <p>
+        Este resultado es orientativo: describe tendencias de estilo de trabajo
+        observadas en tus respuestas, no rasgos definitivos de personalidad.
+      </p>
+      <a class="button quiet" href="/assessment">Realizar otro assessment</a>
+    </div>
+  </section>
+</main>
+<%- include("partials/footer") %>

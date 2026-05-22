@@ -1,0 +1,61 @@
+<%- include("partials/header", { title }) %>
+<main>
+  <section class="hero">
+    <div class="page-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">WorkStyle Assessment</p>
+        <h1>DISC-test PersonaAnalytics</h1>
+        <p class="lead">
+          Una autoevaluacion profesional para explorar como decides, comunicas,
+          sostienes el trabajo y cuidas la calidad dentro de equipos.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="/assessment">Iniciar assessment</a>
+          <a class="button quiet" href="#dimensiones">Ver dimensiones</a>
+        </div>
+      </div>
+      <aside class="notice-panel" aria-label="Advertencia de uso">
+        <strong>Uso orientativo</strong>
+        <p>
+          Esta herramienta es una autoevaluación educativa y profesional de
+          estilos de trabajo. No es una prueba clínica, psicológica, médica ni
+          un instrumento oficial validado para selección de personal. Los
+          resultados deben interpretarse como tendencias conductuales, no como
+          rasgos definitivos de personalidad.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="dimensiones" class="content-band">
+    <div class="page-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Modelo de lectura</p>
+        <h2>Cuatro dimensiones de trabajo</h2>
+      </div>
+      <div class="dimension-grid">
+        <article class="dimension-card tone-a">
+          <span>A</span>
+          <h3><%= dimensions.impulsor.name %></h3>
+          <p>Accion, velocidad, decision, liderazgo directo y foco en resultados.</p>
+        </article>
+        <article class="dimension-card tone-b">
+          <span>B</span>
+          <h3><%= dimensions.influenciador.name %></h3>
+          <p>Comunicacion, persuasion, energia social y capacidad relacional.</p>
+        </article>
+        <article class="dimension-card tone-c">
+          <span>C</span>
+          <h3><%= dimensions.estabilizador.name %></h3>
+          <p>Cooperacion, paciencia, estabilidad y apoyo interpersonal.</p>
+        </article>
+        <article class="dimension-card tone-d">
+          <span>D</span>
+          <h3><%= dimensions.analizador.name %></h3>
+          <p>Precision, logica, estructura, planificacion y control de calidad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include("partials/footer") %>

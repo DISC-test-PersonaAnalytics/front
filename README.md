@@ -1,201 +1,141 @@
-# Professional & Behavioral Profile Assessment
+# DISC-test PersonaAnalytics
 
-> Inspired by behavioral assessment models similar to DISC.
+DISC-test PersonaAnalytics es un MVP web para explorar estilos de trabajo en
+contextos profesionales y educativos. Esta inspirado en modelos conductuales
+tipo DISC, pero usa dimensiones, textos y perfiles propios para un assessment de
+WorkStyle orientado a portfolio.
 
-A web application built with:
+## Aviso de uso
 
-* HTML5
-* CSS3
-* JavaScript
-* Node.js
-* Express.js
-* SQLite3
-* EJS
+Esta herramienta es una autoevaluación educativa y profesional de estilos de
+trabajo. No es una prueba clínica, psicológica, médica ni un instrumento oficial
+validado para selección de personal. Los resultados deben interpretarse como
+tendencias conductuales, no como rasgos definitivos de personalidad.
 
-This project provides a professional and behavioral profile assessment focused on workplace dynamics, communication style, leadership, emotional management, and team compatibility.
+## Stack
 
+- Node.js
+- Express.js
+- EJS
+- SQLite3
+- HTML, CSS y JavaScript sin framework frontend
 
+## Dimensiones
 
-# Overview
+| Codigo | Dimension | Lectura |
+| --- | --- | --- |
+| A | Impulsor | Accion, velocidad, decision, liderazgo directo y resultados |
+| B | Influenciador | Comunicacion, persuasion, energia social y relacion |
+| C | Estabilizador | Cooperacion, paciencia, estabilidad y apoyo interpersonal |
+| D | Analizador | Precision, logica, estructura, planificacion y calidad |
 
+## Funcionalidad MVP
 
-The assessment evaluates four behavioral dimensions:
+- Landing informativa en `/`
+- Assessment con datos opcionales de nombre y rol en `/assessment`
+- Preguntas de opcion A/B/C/D, escala Likert y pares espejo
+- Scoring normalizado de 0 a 100 para las cuatro dimensiones
+- Consistency Score basado en respuestas espejo
+- Perfil principal, perfil secundario e interpretacion combinada
+- Persistencia de resultados y respuestas en SQLite
+- Vista de resultado guardado en `/results/:id`
 
-| Letter | Adapted Profile | Based on DISC Concept |
-| ------ | --------------- | --------------------- |
-| A      | Impulsor        | Dominance             |
-| B      | Comunicador     | Influence             |
-| C      | Estabilizador   | Steadiness            |
-| D      | Analítico       | Conscientiousness     |
-
-The system was intentionally adapted using:
-
-* Different terminology
-* Different question structures
-* Different labels
-* Different scoring representation
-* Different profile naming
-
-This approach avoids directly replicating the original commercial DISC structure while preserving behavioral interpretation principles.
-
----
-
-# Features
-
-* Interactive behavioral assessment
-* Dynamic scoring system
-* Automatic profile interpretation
-* Combined profile analysis
-* SQLite3 result storage
-* EJS-based rendering
-* Express backend
-* Responsive interface
-* IT-oriented behavioral recommendations
-
----
-
-# Tech Stack
-
-## Frontend
-
-* HTML5
-* CSS3
-* JavaScript
-* EJS Templates
-
-## Backend
-
-* Node.js
-* Express.js
-* SQLite3
-
----
-
-# Project Structure
-
-```bash
-project/
-│
-├── app.js
-├── package.json
-├── database/
-│   └── database.sqlite
-├── routes/
-│   └── testRoutes.js
-├── views/
-│   ├── index.ejs
-│   ├── test.ejs
-│   ├── results.ejs
-│   └── partials/
-├── public/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── app.js
-│   └── assets/
-└── README.md
-```
-
----
-
-# Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/your-org/your-project.git
-cd your-project
-```
-
-## Install Dependencies
+## Instalacion y comandos
 
 ```bash
 npm install
-```
-
-## Run Application
-
-```bash
 npm start
 ```
 
-Application runs on:
+El servidor usa `process.env.PORT` o el puerto `3000` por defecto:
 
-```bash
+```text
 http://localhost:3000
 ```
 
----
-
-# Dependencies
+Para desarrollo con recarga:
 
 ```bash
-npm install express ejs sqlite3 body-parser
+npm run dev
 ```
 
-Optional development dependency:
+## Estructura
 
-```bash
-npm install --save-dev nodemon
+```text
+front/
+|-- app.js
+|-- config/
+|   `-- db.js
+|-- controllers/
+|   `-- assessmentController.js
+|-- data/
+|   `-- questions.js
+|-- database/
+|   |-- database.db
+|   `-- schema.sql
+|-- models/
+|   `-- assessmentModel.js
+|-- public/
+|   |-- css/style.css
+|   |-- js/app.js
+|   `-- disctestIcon.png
+|-- routes/
+|   `-- assessmentRoutes.js
+|-- services/
+|   |-- consistencyService.js
+|   |-- profileService.js
+|   `-- scoringService.js
+`-- views/
+    |-- assessment.ejs
+    |-- index.ejs
+    |-- results.ejs
+    `-- partials/
 ```
 
----
+`database/database.db` se crea al iniciar la aplicacion si todavia no existe.
+`database/schema.sql` mantiene la definicion de las tablas `assessments` y
+`answers`.
 
-# Behavioral Assessment Instructions
+## Scoring
 
-1. Read each group of statements.
-2. Select the option that MOST represents you.
-3. Select the option that LEAST represents you.
-4. Respond naturally without overthinking.
+Las preguntas A/B/C/D suman puntos a la dimension elegida. Las preguntas Likert
+aportan un valor de `1` a `5` a su dimension; los items inversos se convierten
+con `6 - valor` antes de sumar. Cada dimension se normaliza contra su maximo
+posible y se expresa de `0` a `100`.
 
+Niveles:
 
+- `0-20`: Muy bajo
+- `21-40`: Bajo
+- `41-60`: Medio
+- `61-80`: Alto
+- `81-100`: Muy alto
 
+## Consistency Score
 
+Los pares espejo comparan una afirmacion principal con su espejo inverso:
 
-# Common Corporate Alternatives to DISC Naming
+```text
+respuesta_espejo_invertida = 6 - respuesta_espejo
+diferencia = abs(respuesta_principal - respuesta_espejo_invertida)
+```
 
-Many companies internally rename DISC-inspired systems using labels such as:
+La diferencia maxima por par es `4`. El servicio convierte la suma de
+diferencias en un score de `0` a `100`.
 
-* Behavioral Profile
-* Workstyle Assessment
-* Team Dynamics Test
-* Professional Traits Assessment
-* Collaboration Style Index
+- `90-100`: Muy consistente
+- `75-89`: Consistente
+- `60-74`: Ambivalente
+- `40-59`: Inconsistente
+- Menor que `40`: Posible respuesta aleatoria o poco fiable
 
----
+## Futuras mejoras
 
-# Future Improvements
-
-* Authentication system
-* PDF report generation
-* Admin dashboard
-* Graph analytics
-* Team compatibility matching
-* AI-generated interpretations
-* REST API
-* Multi-language support
-* Dark mode
-* Export to CSV/Excel
-
----
-
-# License
-
-This project is intended for educational, recruitment, and behavioral assessment experimentation purposes.
-
-Before commercial distribution, verify:
-
-* Local legal requirements
-* Trademark implications
-* HR compliance regulations
-* Psychological assessment regulations
-
----
-
-# Team
-
-Ivo Johannsen [Linkedin](https://www.linkedin.com/in/ivo-joaquin-johannsen-240636195/) | [Github](https://github.com/Haimura-JTS)
-
-Mio Ogura [Linkedin](https://www.linkedin.com/in/mio-ogura/) | [Github](https://github.com/miaryl)
-
-
+- Autenticacion
+- Dashboard admin
+- Exportacion PDF
+- Exportacion CSV
+- Multiidioma
+- API REST
+- Graficos
+- Comparacion de equipos

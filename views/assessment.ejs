@@ -1,0 +1,110 @@
+<%- include("partials/header", { title }) %>
+<main>
+  <section class="assessment-intro">
+    <div class="page-shell split-heading">
+      <div>
+        <p class="eyebrow">Assessment</p>
+        <h1>Explora tu estilo de trabajo</h1>
+        <p class="lead compact">
+          Responde pensando en tu forma habitual de colaborar en contextos
+          profesionales o de aprendizaje.
+        </p>
+      </div>
+      <div class="progress-panel" data-progress>
+        <strong>Progreso</strong>
+        <div class="progress-track" aria-hidden="true">
+          <span data-progress-bar></span>
+        </div>
+        <p><span data-progress-count>0</span> de <%= questions.length %> respuestas</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="page-shell form-shell">
+      <% if (error) { %>
+        <p class="form-error" role="alert"><%= error %></p>
+      <% } %>
+
+      <form method="post" action="/assessment" data-assessment-form>
+        <fieldset class="identity-grid">
+          <legend>Contexto opcional</legend>
+          <label>
+            Nombre
+            <input
+              type="text"
+              name="candidate_name"
+              maxlength="120"
+              value="<%= formData.candidate_name || "" %>"
+              placeholder="Tu nombre o alias"
+            >
+          </label>
+          <label>
+            Rol o profesion
+            <input
+              type="text"
+              name="candidate_role"
+              maxlength="120"
+              value="<%= formData.candidate_role || "" %>"
+              placeholder="Ej. estudiante backend"
+            >
+          </label>
+        </fieldset>
+
+        <div class="question-stack">
+          <% questions.forEach((question, index) => { %>
+            <fieldset class="question-card" data-question-id="<%= question.id %>">
+              <legend>
+                <span><%= String(index + 1).padStart(2, "0") %></span>
+                <%= question.prompt %>
+              </legend>
+
+              <% if (question.type === "choice") { %>
+                <div class="choice-grid">
+                  <% question.options.forEach((option) => { %>
+                    <label class="answer-option">
+                      <input
+                        type="radio"
+                        name="<%= question.id %>"
+                        value="<%= option.key %>"
+                        required
+                        <%= formData[question.id] === option.key ? "checked" : "" %>
+                      >
+                      <strong><%= option.key %></strong>
+                      <span><%= option.text %></span>
+                    </label>
+                  <% }) %>
+                </div>
+              <% } else { %>
+                <div class="likert-scale" aria-label="Escala de acuerdo">
+                  <% for (let value = 1; value <= 5; value += 1) { %>
+                    <label>
+                      <input
+                        type="radio"
+                        name="<%= question.id %>"
+                        value="<%= value %>"
+                        required
+                        <%= String(formData[question.id]) === String(value) ? "checked" : "" %>
+                      >
+                      <span><%= value %></span>
+                    </label>
+                  <% } %>
+                </div>
+                <div class="scale-labels">
+                  <small>En desacuerdo</small>
+                  <small>Totalmente de acuerdo</small>
+                </div>
+              <% } %>
+            </fieldset>
+          <% }) %>
+        </div>
+
+        <div class="submit-row">
+          <p>Los calculos y el guardado se realizan en el servidor.</p>
+          <button class="button primary" type="submit">Calcular resultado</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<%- include("partials/footer") %>
