@@ -1,0 +1,854 @@
+{
+  "assessmentName": "BehaviorMatrix Nexus",
+  "version": "1.0",
+  "language": "es",
+  "disclaimer": "Esta herramienta es una autoevaluación educativa y profesional de estilos de trabajo. No es una prueba clínica, psicológica, médica ni un instrumento oficial validado para selección de personal. Los resultados deben interpretarse como tendencias conductuales, no como rasgos definitivos de personalidad.",
+  "dimensions": {
+    "impulsor": {
+      "code": "A",
+      "name": "Impulsor",
+      "description": "Acción, velocidad, decisión, liderazgo directo y orientación a resultados."
+    },
+    "influenciador": {
+      "code": "B",
+      "name": "Influenciador",
+      "description": "Comunicación, persuasión, energía social y capacidad relacional."
+    },
+    "estabilizador": {
+      "code": "C",
+      "name": "Estabilizador",
+      "description": "Cooperación, paciencia, estabilidad, apoyo interpersonal y consistencia."
+    },
+    "analizador": {
+      "code": "D",
+      "name": "Analizador",
+      "description": "Precisión, lógica, estructura, planificación y control de calidad."
+    }
+  },
+  "likertScale": [
+    {
+      "value": 1,
+      "label": "Nada parecido a mí"
+    },
+    {
+      "value": 2,
+      "label": "Poco parecido"
+    },
+    {
+      "value": 3,
+      "label": "Depende"
+    },
+    {
+      "value": 4,
+      "label": "Bastante parecido"
+    },
+    {
+      "value": 5,
+      "label": "Me representa muchísimo"
+    }
+  ],
+  "questions": [
+    {
+      "id": "p1",
+      "phase": "fase_1_impulsor",
+      "phaseTitle": "Fase 1 — Impulsor",
+      "type": "choice",
+      "text": "Cuando aparece un problema urgente:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Actúo inmediatamente.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento coordinar personas.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Mantengo estabilidad.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo información primero.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "phase": "fase_1_impulsor",
+      "phaseTitle": "Fase 1 — Impulsor",
+      "type": "likert",
+      "text": "Cuando surge una situación que requiere dirección, mi tendencia a tomar control es:",
+      "dimension": "impulsor",
+      "scoringDirection": "normal",
+      "customScale": [
+        {
+          "value": 1,
+          "label": "Evito tomar control"
+        },
+        {
+          "value": 2,
+          "label": "Prefiero seguir instrucciones"
+        },
+        {
+          "value": 3,
+          "label": "Depende del contexto"
+        },
+        {
+          "value": 4,
+          "label": "Suelo asumir liderazgo"
+        },
+        {
+          "value": 5,
+          "label": "Tomo iniciativa constantemente"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "phase": "fase_1_impulsor",
+      "phaseTitle": "Fase 1 — Impulsor",
+      "type": "choice",
+      "text": "Cuando trabajas bajo presión:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mi energía aumenta.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento mantener motivación grupal.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Necesito estabilidad.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Me centro en precisión.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "phase": "fase_1_impulsor",
+      "phaseTitle": "Fase 1 — Impulsor",
+      "type": "likert",
+      "text": "Mi velocidad al decidir suele ser:",
+      "dimension": "impulsor",
+      "scoringDirection": "normal",
+      "customScale": [
+        {
+          "value": 1,
+          "label": "Muy lenta"
+        },
+        {
+          "value": 2,
+          "label": "Prudente"
+        },
+        {
+          "value": 3,
+          "label": "Variable"
+        },
+        {
+          "value": 4,
+          "label": "Bastante rápida"
+        },
+        {
+          "value": 5,
+          "label": "Extremadamente rápida"
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "phase": "fase_1_impulsor",
+      "phaseTitle": "Fase 1 — Impulsor",
+      "type": "choice",
+      "text": "¿Qué describe mejor tu energía laboral?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Competitiva.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Entusiasta.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Constante.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analítica.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "phase": "fase_2_influenciador",
+      "phaseTitle": "Fase 2 — Influenciador",
+      "type": "choice",
+      "text": "Cuando conoces personas nuevas:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Voy directo al objetivo.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Inicio conversación fácilmente.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Espero un ambiente cómodo.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Observo antes de interactuar.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "phase": "fase_2_influenciador",
+      "phaseTitle": "Fase 2 — Influenciador",
+      "type": "likert",
+      "text": "Mi nivel de comunicación y sociabilidad suele ser:",
+      "dimension": "influenciador",
+      "scoringDirection": "normal",
+      "customScale": [
+        {
+          "value": 1,
+          "label": "Muy reservado"
+        },
+        {
+          "value": 2,
+          "label": "Poco expresivo"
+        },
+        {
+          "value": 3,
+          "label": "Depende del grupo"
+        },
+        {
+          "value": 4,
+          "label": "Bastante sociable"
+        },
+        {
+          "value": 5,
+          "label": "Extremadamente comunicativo"
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "phase": "fase_2_influenciador",
+      "phaseTitle": "Fase 2 — Influenciador",
+      "type": "choice",
+      "text": "En reuniones normalmente:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Busco resultados rápidos.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Genero participación.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Escucho y apoyo.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo detalles.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "phase": "fase_2_influenciador",
+      "phaseTitle": "Fase 2 — Influenciador",
+      "type": "choice",
+      "text": "¿Qué suele motivarte más?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ganar retos.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Conectar con personas.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Trabajar en armonía.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Resolver problemas complejos.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "phase": "fase_2_influenciador",
+      "phaseTitle": "Fase 2 — Influenciador",
+      "type": "choice",
+      "text": "Tu estilo interpersonal suele ser:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Directo.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Expresivo.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Calmado.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Racional.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "phase": "fase_3_estabilizador",
+      "phaseTitle": "Fase 3 — Estabilizador",
+      "type": "choice",
+      "text": "Cuando existen cambios constantes:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Me adapto rápidamente.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento mantener motivación.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Necesito estabilidad progresiva.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo el impacto cuidadosamente.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "phase": "fase_3_estabilizador",
+      "phaseTitle": "Fase 3 — Estabilizador",
+      "type": "likert",
+      "text": "Mi nivel de estabilidad y constancia suele ser:",
+      "dimension": "estabilizador",
+      "scoringDirection": "normal",
+      "customScale": [
+        {
+          "value": 1,
+          "label": "Muy impaciente"
+        },
+        {
+          "value": 2,
+          "label": "Poco constante"
+        },
+        {
+          "value": 3,
+          "label": "Variable"
+        },
+        {
+          "value": 4,
+          "label": "Bastante estable"
+        },
+        {
+          "value": 5,
+          "label": "Extremadamente consistente"
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "phase": "fase_3_estabilizador",
+      "phaseTitle": "Fase 3 — Estabilizador",
+      "type": "choice",
+      "text": "Cuando alguien necesita ayuda:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Busco resolver rápido.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento animarlo.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Ofrezco apoyo constante.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo la mejor solución.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "phase": "fase_3_estabilizador",
+      "phaseTitle": "Fase 3 — Estabilizador",
+      "type": "choice",
+      "text": "¿Qué suele afectarte más?",
+      "options": [
+        {
+          "label": "A",
+          "text": "La lentitud.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "El rechazo social.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "La tensión interpersonal.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Los errores.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "phase": "fase_3_estabilizador",
+      "phaseTitle": "Fase 3 — Estabilizador",
+      "type": "choice",
+      "text": "Tu ritmo ideal de trabajo es:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rápido y dinámico.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Social y energético.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Estable y predecible.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Estructurado y preciso.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "phase": "fase_4_analizador",
+      "phaseTitle": "Fase 4 — Analizador",
+      "type": "choice",
+      "text": "Cuando realizas tareas importantes:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Priorizo rapidez.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Busco coordinación.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Mantengo estabilidad.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Reviso detalles cuidadosamente.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "phase": "fase_4_analizador",
+      "phaseTitle": "Fase 4 — Analizador",
+      "type": "likert",
+      "text": "Mi nivel de organización y método suele ser:",
+      "dimension": "analizador",
+      "scoringDirection": "normal",
+      "customScale": [
+        {
+          "value": 1,
+          "label": "Muy improvisador"
+        },
+        {
+          "value": 2,
+          "label": "Poco estructurado"
+        },
+        {
+          "value": 3,
+          "label": "Variable"
+        },
+        {
+          "value": 4,
+          "label": "Bastante organizado"
+        },
+        {
+          "value": 5,
+          "label": "Extremadamente metódico"
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "phase": "fase_4_analizador",
+      "phaseTitle": "Fase 4 — Analizador",
+      "type": "choice",
+      "text": "Cuando algo falla:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Actúo rápido.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento mantener la moral alta.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Busco estabilidad grupal.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo las causas profundamente.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "phase": "fase_4_analizador",
+      "phaseTitle": "Fase 4 — Analizador",
+      "type": "choice",
+      "text": "¿Qué valoras más?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Resultados.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Relaciones.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Seguridad.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Precisión.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "phase": "fase_4_analizador",
+      "phaseTitle": "Fase 4 — Analizador",
+      "type": "choice",
+      "text": "Tu forma de trabajar normalmente es:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Orientada a acción.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Orientada a personas.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Orientada a estabilidad.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Orientada a análisis.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "phase": "fase_5_escenarios_reales",
+      "phaseTitle": "Fase 5 — Escenarios Reales",
+      "type": "choice",
+      "text": "Tu equipo tiene una crisis importante. ¿Qué harías primero?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Tomo control inmediatamente.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento motivar al grupo.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Busco mantener la calma.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo información crítica.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "phase": "fase_5_escenarios_reales",
+      "phaseTitle": "Fase 5 — Escenarios Reales",
+      "type": "choice",
+      "text": "Debes trabajar con una persona muy lenta. ¿Cómo reaccionas?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Me frustro rápidamente.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Intento motivarla.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Mantengo paciencia.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Analizo por qué ocurre.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "e3",
+      "phase": "fase_5_escenarios_reales",
+      "phaseTitle": "Fase 5 — Escenarios Reales",
+      "type": "choice",
+      "text": "Un proyecto necesita creatividad y rapidez. ¿Qué aportas principalmente?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Actúo inmediatamente.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Genero ideas grupales.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Mantengo coordinación estable.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Estructuro soluciones.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "e4",
+      "phase": "fase_5_escenarios_reales",
+      "phaseTitle": "Fase 5 — Escenarios Reales",
+      "type": "choice",
+      "text": "Debes entregar un trabajo extremadamente importante. ¿Qué priorizas?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Priorizo velocidad.",
+          "dimension": "impulsor"
+        },
+        {
+          "label": "B",
+          "text": "Busco colaboración.",
+          "dimension": "influenciador"
+        },
+        {
+          "label": "C",
+          "text": "Mantengo ritmo estable.",
+          "dimension": "estabilizador"
+        },
+        {
+          "label": "D",
+          "text": "Reviso la calidad detalladamente.",
+          "dimension": "analizador"
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Me siento cómodo tomando decisiones rápidas.",
+      "dimension": "impulsor",
+      "scoringDirection": "normal",
+      "mirrorGroup": "impulsor",
+      "mirrorType": "main",
+      "mirrorPair": "p22"
+    },
+    {
+      "id": "p22",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Prefiero evitar asumir liderazgo o control.",
+      "dimension": "impulsor",
+      "scoringDirection": "inverse",
+      "mirrorGroup": "impulsor",
+      "mirrorType": "inverse",
+      "mirrorPair": "p21"
+    },
+    {
+      "id": "p23",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Disfruto muchísimo interactuar y comunicarme con personas.",
+      "dimension": "influenciador",
+      "scoringDirection": "normal",
+      "mirrorGroup": "influenciador",
+      "mirrorType": "main",
+      "mirrorPair": "p24"
+    },
+    {
+      "id": "p24",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Las interacciones sociales prolongadas suelen agotarme bastante.",
+      "dimension": "influenciador",
+      "scoringDirection": "inverse",
+      "mirrorGroup": "influenciador",
+      "mirrorType": "inverse",
+      "mirrorPair": "p23"
+    },
+    {
+      "id": "p25",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Prefiero ambientes predecibles y equilibrados.",
+      "dimension": "estabilizador",
+      "scoringDirection": "normal",
+      "mirrorGroup": "estabilizador",
+      "mirrorType": "main",
+      "mirrorPair": "p26"
+    },
+    {
+      "id": "p26",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Los cambios rápidos y constantes me resultan muy estimulantes.",
+      "dimension": "estabilizador",
+      "scoringDirection": "inverse",
+      "mirrorGroup": "estabilizador",
+      "mirrorType": "inverse",
+      "mirrorPair": "p25"
+    },
+    {
+      "id": "p27",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Necesito revisar detalles cuidadosamente antes de entregar trabajo.",
+      "dimension": "analizador",
+      "scoringDirection": "normal",
+      "mirrorGroup": "analizador",
+      "mirrorType": "main",
+      "mirrorPair": "p28"
+    },
+    {
+      "id": "p28",
+      "phase": "fase_6_preguntas_espejo",
+      "phaseTitle": "Fase 6 — Preguntas Espejo",
+      "type": "likert",
+      "text": "Prefiero actuar rápidamente aunque exista margen de error.",
+      "dimension": "analizador",
+      "scoringDirection": "inverse",
+      "mirrorGroup": "analizador",
+      "mirrorType": "inverse",
+      "mirrorPair": "p27"
+    }
+  ]
+}
