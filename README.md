@@ -5,6 +5,18 @@ contextos profesionales y educativos. Esta inspirado en modelos conductuales
 tipo DISC, pero usa dimensiones, textos y perfiles propios para un assessment de
 WorkStyle orientado a portfolio.
 
+## 📸 Captura de pantalla 
+<img width="1783" height="848" alt="Screenshot 2026-05-22 190020" src="https://github.com/user-attachments/assets/c38993de-c42d-4f68-8cab-df8fdee44236" />
+
+<img width="1616" height="867" alt="Screenshot 2026-05-22 190114" src="https://github.com/user-attachments/assets/378c100a-cb03-4e99-b112-85d6a706f3e9" />
+
+<img width="1576" height="894" alt="Screenshot 2026-05-22 190123" src="https://github.com/user-attachments/assets/49bd954c-3925-4a53-9d27-db82678ca1b6" />
+
+<img width="965" height="853" alt="Screenshot 2026-05-22 190226" src="https://github.com/user-attachments/assets/a43a1af7-356b-4b4d-9a02-f23af37645a1" />
+
+
+
+
 ## Aviso de uso
 
 Esta herramienta es una autoevaluación educativa y profesional de estilos de
@@ -139,3 +151,9 @@ diferencias en un score de `0` a `100`.
 - API REST
 - Graficos
 - Comparacion de equipos
+
+## Equipo
+
+Ivo Johannsen [Linkedin](https://www.linkedin.com/in/ivo-joaquin-johannsen-240636195/) | [Github](https://github.com/Haimura-JTS)
+
+Mio Ogura [Linkedin](https://www.linkedin.com/in/mio-ogura/) | [Github](https://github.com/miaryl)
